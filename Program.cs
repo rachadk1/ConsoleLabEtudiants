@@ -136,12 +136,21 @@ namespace ConsoleLabEtudiants
             }
 
 
+            // Etape 8 : Calcul de la moyenne du groupe
+            Console.WriteLine("\n=== MOYENNE DU GROUPE ===");
+
+            double moyenne = CalculerMoyenne(college);
+
+            Console.WriteLine("Nombre d'étudiants : " + college.NombreElements());
+            Console.WriteLine("Moyenne générale : " + moyenne.ToString("F2") + " / 100");
+
+
             Console.ReadKey();
         }
-    
 
-static Etudiant? RechercherEtudiant(
-    Repository<Etudiant> college, string matricule)
+
+        static Etudiant? RechercherEtudiant(
+            Repository<Etudiant> college, string matricule)
         {
             foreach (Etudiant etudiant in college.ObtenirTous())
             {
@@ -153,6 +162,26 @@ static Etudiant? RechercherEtudiant(
 
             return null;
         }
+
+
+
+        static double CalculerMoyenne(Repository<Etudiant> college)
+        {
+            double somme = 0;
+
+            foreach (Etudiant etudiant in college.ObtenirTous())
+            {
+                somme += etudiant.NoteFinale;
+            }
+
+            if (college.NombreElements() == 0)
+            {
+                return 0;
+            }
+
+            return somme / college.NombreElements();
+        }
+
 
     }
 
