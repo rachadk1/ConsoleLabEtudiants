@@ -145,6 +145,25 @@ namespace ConsoleLabEtudiants
             Console.WriteLine("Moyenne générale : " + moyenne.ToString("F2") + " / 100");
 
 
+            // Etape 9 : Utilisation des types anonymes
+            Console.WriteLine("\n=== RESULTATS DES ETUDIANTS ===");
+
+            foreach (Etudiant etudiant in college.ObtenirTous())
+            {
+                var resultat = new
+                {
+                    NomComplet = etudiant.Prenom + " " + etudiant.Nom,
+                    etudiant.Programme,
+                    etudiant.NoteFinale
+                };
+
+                Console.WriteLine("Nom complet : " + resultat.NomComplet);
+                Console.WriteLine("Programme : " + resultat.Programme);
+                Console.WriteLine("Note finale : " + resultat.NoteFinale);
+                Console.WriteLine("---------------------------");
+            }
+
+
             Console.ReadKey();
         }
 
