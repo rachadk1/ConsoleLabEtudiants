@@ -12,5 +12,12 @@ namespace ConsoleLabEtudiants
         public string Rue;
         public string Ville;
         public string CodePostal;
+
+        public void Afficher()
+        {
+            Console.WriteLine("Adresse : " + NumeroCivique
+                              + " " + Rue + ", " + Ville
+                              + ", " + CodePostal);
+        }
     }
 }
