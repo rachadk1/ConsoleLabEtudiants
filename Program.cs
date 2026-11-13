@@ -109,5 +109,22 @@ namespace ConsoleLabEtudiants
 
             Console.ReadKey();
         }
+    
+
+static Etudiant? RechercherEtudiant(
+    Repository<Etudiant> college, string matricule)
+        {
+            foreach (Etudiant etudiant in college.ObtenirTous())
+            {
+                if (etudiant.Matricule == matricule)
+                {
+                    return etudiant;
+                }
+            }
+
+            return null;
+        }
+
     }
+
 }
