@@ -14,7 +14,28 @@ namespace ConsoleLabEtudiants
         public string Prenom { get; set; } = "";
         public Programme Programme { get; set; }
         public Adresse Adresse { get; set; }
-        public double NoteFinale { get; set; }
+
+        private double noteFinale;
+
+        public double NoteFinale
+        {
+            get
+            {
+                return noteFinale;
+            }
+
+            set
+            {
+                if (value < 0 || value > 100)
+                {
+                    throw new NoteInvalideException(
+                        "La note doit être comprise entre 0 et 100."
+                    );
+                }
+
+                noteFinale = value;
+            }
+        }
 
         // Constructeur
         public Etudiant(string matricule, string nom,
