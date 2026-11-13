@@ -106,6 +106,35 @@ namespace ConsoleLabEtudiants
             );
 
 
+            // Etape 7 : Recherche d'un étudiant
+            Console.WriteLine("\n=== RECHERCHE D'ETUDIANTS ===");
+
+            // Recherche qui est supposée réussir
+            Etudiant? resultat1 = RechercherEtudiant(college, "ETU003");
+
+            if (resultat1 != null)
+            {
+                Console.WriteLine("Etudiant trouvé :");
+                resultat1.Afficher();
+            }
+            else
+            {
+                Console.WriteLine("Etudiant introuvable.");
+            }
+
+            // Recherche qui est supposée échouer
+            Etudiant? resultat2 = RechercherEtudiant(college, "ETU999");
+
+            if (resultat2 != null)
+            {
+                Console.WriteLine("Etudiant trouvé :");
+                resultat2.Afficher();
+            }
+            else
+            {
+                Console.WriteLine("Etudiant introuvable.");
+            }
+
 
             Console.ReadKey();
         }
