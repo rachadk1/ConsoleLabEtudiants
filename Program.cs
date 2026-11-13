@@ -12,7 +12,16 @@ namespace ConsoleLabEtudiants
 
             Console.WriteLine("Programme : " + programme);
 
-            Console.ReadKey();
+
+            // Etape 3 : Test de la structure Adresse
+            Adresse adresse = new Adresse();
+
+            adresse.NumeroCivique = 123;
+            adresse.Rue = "Distillery Lane";
+            adresse.Ville = "Toronto";
+            adresse.CodePostal = "M1M 1M1";
+
+            adresse.Afficher(); Console.ReadKey();
         }
     }
 }
