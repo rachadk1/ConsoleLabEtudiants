@@ -28,8 +28,8 @@ namespace ConsoleLabEtudiants
 
             Etudiant etudiant1 = new Etudiant(
                 "ETU001",
-                "Dupont",
-                "Jean",
+                "Meriem",
+                "Khalil",
                 Programme.Informatique,
                 adresse,
                 85
@@ -68,6 +68,43 @@ namespace ConsoleLabEtudiants
                     );
                 }
             }
+
+
+            // Etape 6 : Gestion des étudiants avec Repository
+            Console.WriteLine("\n=== REPOSITORY ETUDIANTS ===");
+
+            Repository<Etudiant> college = new Repository<Etudiant>();
+
+            Etudiant etudiant2 = new Etudiant(
+                "ETU002", "Rachad", "K.",
+                Programme.Reseau, adresse, 78
+            );
+
+            Etudiant etudiant3 = new Etudiant(
+                "ETU003", "Youness", "B.",
+                Programme.Cybersecurite, adresse, 92
+            );
+
+            Etudiant etudiant4 = new Etudiant(
+                "ETU004", "Diallo", "Aminata",
+                Programme.IntelligenceArtificielle, adresse, 88
+            );
+
+            Etudiant etudiant5 = new Etudiant(
+                "ETU005", "Yves", "F.",
+                Programme.Informatique, adresse, 65
+            );
+
+            college.Ajouter(etudiant1);
+            college.Ajouter(etudiant2);
+            college.Ajouter(etudiant3);
+            college.Ajouter(etudiant4);
+            college.Ajouter(etudiant5);
+
+            Console.WriteLine(
+                "Nombre d'étudiants : " + college.NombreElements()
+            );
+
 
 
             Console.ReadKey();
