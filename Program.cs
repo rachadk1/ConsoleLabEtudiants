@@ -21,7 +21,23 @@ namespace ConsoleLabEtudiants
             adresse.Ville = "Toronto";
             adresse.CodePostal = "M1M 1M1";
 
-            adresse.Afficher(); Console.ReadKey();
+            adresse.Afficher();
+
+            // Etape 4 : Classe Etudiant
+            Console.WriteLine("\n=== INFORMATIONS ETUDIANT ===");
+
+            Etudiant etudiant1 = new Etudiant(
+                "ETU001",
+                "Dupont",
+                "Jean",
+                Programme.Informatique,
+                adresse,
+                85
+            );
+
+            etudiant1.Afficher();
+
+            Console.ReadKey();
         }
     }
 }
