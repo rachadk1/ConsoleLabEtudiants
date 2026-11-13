@@ -37,6 +37,39 @@ namespace ConsoleLabEtudiants
 
             etudiant1.Afficher();
 
+
+            // Étape 5 : Gestion des exceptions
+            Console.WriteLine("\n=== TEST DES NOTES ===");
+
+            double[] notes = { -10, 75, 120 };
+
+            for (int i = 0; i < notes.Length; i++)
+            {
+                try
+                {
+                    Etudiant etudiantTest = new Etudiant(
+                        "TEST" + (i + 1),
+                        "Test",
+                        "Etudiant",
+                        Programme.Informatique,
+                        adresse,
+                        notes[i]
+                    );
+
+                    Console.WriteLine(
+                        "Note acceptée : " + etudiantTest.NoteFinale
+                    );
+                }
+                catch (NoteInvalideException ex)
+                {
+                    Console.WriteLine(
+                        "Erreur pour la note " + notes[i]
+                        + " : " + ex.Message
+                    );
+                }
+            }
+
+
             Console.ReadKey();
         }
     }
